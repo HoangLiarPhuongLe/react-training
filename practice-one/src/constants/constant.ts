@@ -103,3 +103,22 @@ export const footerNavList = [
     ],
   },
 ]
+
+export const listNavHeader = [
+  {
+    to: '#',
+    content: 'home',
+  },
+  {
+    to: '#',
+    content: 'shop',
+  },
+  {
+    to: '#',
+    content: 'about us',
+  },
+  {
+    to: '#',
+    content: 'contact',
+  },
+]

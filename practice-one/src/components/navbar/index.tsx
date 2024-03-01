@@ -1,24 +1,7 @@
-const list = [
-  {
-    to: '#',
-    content: 'home',
-  },
-  {
-    to: '#',
-    content: 'shop',
-  },
-  {
-    to: '#',
-    content: 'about us',
-  },
-  {
-    to: '#',
-    content: 'contact',
-  },
-]
+import { listNavHeader } from '../../constants/constant'
 
 const Navbar = () => {
-  const navList = list.map((item) => (
+  const navList = listNavHeader.map((item) => (
     <li
       key={item.content}
       className="cursor-pointer capitalize hover:font-bold hover:text-blue-400"

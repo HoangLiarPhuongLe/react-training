@@ -6,25 +6,6 @@ import cart from '../../assets/images/cart.svg'
 import account from '../../assets/images/account.svg'
 import heart from '../../assets/images/heart.svg'
 
-const contents = [
-  {
-    to: '#',
-    content: 'home',
-  },
-  {
-    to: '#',
-    content: 'shop',
-  },
-  {
-    to: '#',
-    content: 'about us',
-  },
-  {
-    to: '#',
-    content: 'contact',
-  },
-]
-
 const Header = () => {
   return (
     <header className="flex items-center justify-between px-28 py-8">
@@ -32,7 +13,7 @@ const Header = () => {
         <img className="cursor-pointer" src={logo} alt="logo" />
       </div>
       <div className="flex gap-6">
-        <Navbar list={contents} />
+        <Navbar />
         <div className="flex flex-row items-center gap-6">
           <ButtonIcon source={cart} alt="cart" />
           <ButtonIcon source={heart} alt="heart" />

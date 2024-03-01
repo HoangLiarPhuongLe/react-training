@@ -1,5 +1,24 @@
-const Navbar = (props: { list: { to: string; content: string }[] }) => {
-  const navList = props.list.map((item) => (
+const list = [
+  {
+    to: '#',
+    content: 'home',
+  },
+  {
+    to: '#',
+    content: 'shop',
+  },
+  {
+    to: '#',
+    content: 'about us',
+  },
+  {
+    to: '#',
+    content: 'contact',
+  },
+]
+
+const Navbar = () => {
+  const navList = list.map((item) => (
     <li
       key={item.content}
       className="cursor-pointer capitalize hover:font-bold hover:text-blue-400"

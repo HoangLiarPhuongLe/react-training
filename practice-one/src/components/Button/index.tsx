@@ -1,17 +1,17 @@
 import { ReactNode } from 'react'
 
 type ButtonProps = {
-  primary?: boolean
+  variant?: 'primary' | 'secondary'
   children?: ReactNode
   size?: 'medium' | 'large'
 }
 
 const Button = ({
   children,
-  primary = false,
+  variant = 'primary',
   size = 'medium',
 }: ButtonProps) => {
-  const mode = primary ? 'bg-purple-700' : 'bg-red-700'
+  const mode = variant === 'secondary' ? 'bg-purple-700' : 'bg-red-700'
 
   const result = size === 'medium' ? 'w-44' : 'w-96'
   return (

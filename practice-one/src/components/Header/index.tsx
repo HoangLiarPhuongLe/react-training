@@ -5,6 +5,7 @@ import Navbar from '../Navbar'
 import cart from '../../assets/images/cart.svg'
 import account from '../../assets/images/account.svg'
 import heart from '../../assets/images/heart.svg'
+import { HEADER_NAVLIST } from '../../constants/constant'
 
 const Header = () => {
   return (
@@ -13,7 +14,7 @@ const Header = () => {
         <img className="cursor-pointer" src={logo} alt="logo" />
       </div>
       <div className="flex gap-6">
-        <Navbar />
+        <Navbar list={HEADER_NAVLIST} />
         <div className="flex flex-row items-center gap-6">
           <ButtonIcon source={cart} alt="cart" />
           <ButtonIcon source={heart} alt="heart" />

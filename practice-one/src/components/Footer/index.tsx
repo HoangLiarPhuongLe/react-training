@@ -1,9 +1,6 @@
 import logo from '../../assets/images/logo.png'
-import Button from '../button'
-import NavbarFooter from '../navbarfooter'
-import cart from '../../assets/images/cart.svg'
-import ButtonIcon from '../button-icon'
-import heart from '../../assets/images/heart.svg'
+import Button from '../Button'
+import NavbarFooter from '../NavbarFooter'
 
 const Footer = () => {
   return (
@@ -15,7 +12,7 @@ const Footer = () => {
           justo nec porttitor auctor, erat sapien faucibus lectus, vel tempor
           dolor augue et lectus.{' '}
         </p>
-        <Button>login now</Button>
+        <Button variant="tinary">login now</Button>
       </div>
       <div className="">
         <NavbarFooter />

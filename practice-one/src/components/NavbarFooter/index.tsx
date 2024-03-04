@@ -1,7 +1,7 @@
-import { footerNavList } from '../../constants/constant'
+import { FOOTER_NAVLIST } from '../../constants/constant'
 
 const NavbarFooter = () => {
-  const listNavbarFooter = footerNavList.map((item) => (
+  const listNavbarFooter = FOOTER_NAVLIST.map((item) => (
     <li key={item.title} className=" font-bold capitalize text-white ">
       <p className="mb-4 text-2xl">{item.title}</p>
       <ul className="space-y-2">

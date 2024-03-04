@@ -1,6 +1,6 @@
 import logo from '../../assets/images/logo.png'
 import searchicon from '../../assets/images/searchicon.svg'
-import ButtonIcon from '../button-icon'
+import ButtonIcon from '../ButtonIcon'
 import Navbar from '../navbar'
 import cart from '../../assets/images/cart.svg'
 import account from '../../assets/images/account.svg'

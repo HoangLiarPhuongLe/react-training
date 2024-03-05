@@ -1,4 +1,4 @@
-import { FOOTER_NAVLIST } from '../../constants/constant'
+import { FOOTER_NAVLIST } from '../../constants/navigation'
 import NavbarFooterItems from './NavbarFooterItems'
 
 const NavbarFooter = () => {

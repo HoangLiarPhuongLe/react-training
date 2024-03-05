@@ -26,6 +26,13 @@ export const Secondary: Story = {
   },
 }
 
+export const Tinary: Story = {
+  args: {
+    variant: 'tinary',
+    children: 'Checkout',
+  },
+}
+
 export const Large: Story = {
   args: {
     size: 'large',

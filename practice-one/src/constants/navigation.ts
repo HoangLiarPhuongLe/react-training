@@ -1,9 +1,9 @@
-import Facebook from '../components/icon/facebook'
-import Instagram from '../components/icon/instagram'
-import Twitter from '../components/icon/twitter'
-import Linkedin from '../components/icon/linkedin'
+import Facebook from '../components/Icon/Facebook'
+import Instagram from '../components/Icon/Instagram'
+import Twitter from '../components/Icon/Twitter'
+import Linkedin from '../components/Icon/Linkedin'
 
-export const footerNavList = [
+export const FOOTER_NAVLIST = [
   {
     title: 'home',
     contents: [
@@ -104,7 +104,7 @@ export const footerNavList = [
   },
 ]
 
-export const listNavHeader = [
+export const HEADER_NAVLIST = [
   {
     to: '#',
     content: 'home',

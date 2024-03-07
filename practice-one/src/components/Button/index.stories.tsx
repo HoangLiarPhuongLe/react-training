@@ -16,20 +16,25 @@ type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
   args: {
-    primary: false,
     children: 'Checkout',
   },
 }
-export const Primary: Story = {
+export const Secondary: Story = {
   args: {
-    primary: true,
+    variant: 'secondary',
+    children: 'Checkout',
+  },
+}
+
+export const Tinary: Story = {
+  args: {
+    variant: 'tinary',
     children: 'Checkout',
   },
 }
 
 export const Large: Story = {
   args: {
-    primary: true,
     size: 'large',
     children: 'Checkout',
   },

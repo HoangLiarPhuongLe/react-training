@@ -17,14 +17,15 @@ type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
   args: {
+    variant: 'primary',
     source: heart,
     alt: 'heart',
   },
 }
 
-export const Primary: Story = {
+export const Secondary: Story = {
   args: {
-    primary: true,
+    variant: 'secondary',
     source: heart,
     alt: 'heart',
   },

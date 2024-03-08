@@ -6,6 +6,7 @@ import cart from '../../assets/images/cart.svg'
 import account from '../../assets/images/account.svg'
 import heart from '../../assets/images/heart.svg'
 import { HEADER_NAVLIST } from '../../constants/navigation'
+import { Link } from 'react-router-dom'
 
 const Header = () => (
   <header className="flex items-center justify-between px-28 py-8">
@@ -15,7 +16,9 @@ const Header = () => (
     <div className="flex gap-6">
       <Navbar list={HEADER_NAVLIST} />
       <div className="flex flex-row items-center gap-6">
-        <ButtonIcon source={cart} alt="cart" />
+        <Link to="/cart">
+          <ButtonIcon source={cart} alt="cart" />
+        </Link>
         <ButtonIcon source={heart} alt="heart" />
         <ButtonIcon source={account} alt="account" />
       </div>

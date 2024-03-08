@@ -12,6 +12,7 @@ const ProductsPage = () => {
   const [category, setCategory] = useState<TCategory | undefined>(undefined)
   const [color, setColor] = useState<TColor | undefined>(undefined)
   const [size, setSize] = useState<TSize | undefined>(undefined)
+  const [price, setPrice] = useState<number>(40)
   const [products, setProducts] = useState<TProduct[]>([])
 
   useEffect(() => {
@@ -20,6 +21,7 @@ const ProductsPage = () => {
       if (size) options.push('size=' + size)
       if (color) options.push('color=' + color)
       if (category) options.push('category=' + category)
+      if (price) options.push('price_gte=' + price)
 
       const response = await fetch(
         `${API_BASE_URL}products?${options.join('&')}`,
@@ -29,7 +31,7 @@ const ProductsPage = () => {
     }
 
     fetchData()
-  }, [category, color, size])
+  }, [category, color, size, price])
 
   return (
     <main className="flex flex-col">
@@ -50,7 +52,7 @@ const ProductsPage = () => {
 
           <Color value={color} setValue={setColor} />
 
-          <ProgressBar price={40} />
+          <ProgressBar value={price} setValue={setPrice} />
 
           <Size value={size} setValue={setSize} />
         </div>

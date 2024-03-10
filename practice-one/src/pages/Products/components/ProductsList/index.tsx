@@ -1,13 +1,13 @@
 import { TProduct } from '../../../../types'
+import { Link } from 'react-router-dom'
 import Button from '../../../../components/Button'
 import Product from '../Product'
-import { Link } from 'react-router-dom'
 
 const ListProducts = ({ products }: { products: TProduct[] }) => {
   return (
     <div className="flex flex-col gap-5 ">
       <div className="grid grid-cols-1 justify-between gap-x-8 gap-y-7  lg:grid-cols-3 ">
-        {products.map((product) => {
+        {products.map((product: TProduct) => {
           return (
             <Link to="/details">
               <Product

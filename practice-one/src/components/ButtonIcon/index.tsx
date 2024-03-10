@@ -1,4 +1,4 @@
-type ButtonIconProps = {
+export type ButtonIconProps = {
   variant?: 'primary' | 'secondary'
   source: string
   alt: string

@@ -1,12 +1,12 @@
-import ListProducts from './components/ProductsList'
 import { useState, useEffect } from 'react'
+import { TCategory, TColor, TProduct, TSize } from '../../types'
+import { API_BASE_URL } from '../../constants/urls'
+import Slides from './components/Slides'
 import Categories from './components/FilterOptions/Categories'
 import Color from './components/FilterOptions/ColorOptions'
 import ProgressBar from './components/ProgressBar'
 import Size from './components/FilterOptions/SizeOptions'
-import { TCategory, TColor, TProduct, TSize } from '../../types'
-import { API_BASE_URL } from '../../constants/urls'
-import Slides from './components/Slides'
+import ListProducts from './components/ProductsList'
 
 const ProductsPage = () => {
   const [category, setCategory] = useState<TCategory | undefined>(undefined)

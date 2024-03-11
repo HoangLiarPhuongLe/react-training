@@ -6,7 +6,7 @@ export type ButtonIconProps = {
 
 const ButtonIcon = ({ source, alt, variant = 'primary' }: ButtonIconProps) => (
   <button
-    className={`cursor-pointer p-1 ${variant === 'secondary' ? 'bg-red-500' : ''}`}
+    className={`cursor-pointer p-1 ${variant === 'secondary' ? 'h-12 bg-purple-500' : ''}`}
   >
     <img src={source} alt={alt} />
   </button>

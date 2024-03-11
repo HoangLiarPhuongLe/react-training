@@ -1,7 +1,7 @@
 import { TProduct } from '../../../../types'
+import { LIST_STARS } from '../../../../constants/icon'
 import productImage from '../../../../assets/images/product.png'
-import startfive from '../../../../assets/images/star5.svg'
-import ButtonIcon from '../../../../components/ButtonIcon'
+import StarFive from '../../../../components/Evalute/StarFive'
 
 const Product = ({ id, name, price, color, category, size }: TProduct) => {
   return (
@@ -13,14 +13,7 @@ const Product = ({ id, name, price, color, category, size }: TProduct) => {
         <div className="space-y-2">
           <p className="font-bold">{name}</p>
           <p className="text-slate-400">Best quality</p>
-          <div>
-            <ButtonIcon source={startfive} alt="start five" />
-            <ButtonIcon source={startfive} alt="start five" />
-            <ButtonIcon source={startfive} alt="start five" />
-            <ButtonIcon source={startfive} alt="start five" />
-            <ButtonIcon source={startfive} alt="start five" />
-            <span className="text-slate-400">(1k)</span>
-          </div>
+          <StarFive list={LIST_STARS} />
         </div>
         <p className="font-bold">{price}$</p>
       </div>

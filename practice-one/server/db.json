@@ -1,0 +1,52 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Small T-shirt",
+      "price": 40,
+      "size": "L",
+      "color": "red",
+      "category": "men"
+    },
+    {
+      "id": 2,
+      "name": "Blue T-shirt",
+      "price": 45,
+      "size": "XL",
+      "color": "blue",
+      "category": "children"
+    },
+    {
+      "id": 3,
+      "name": "Medium T-shirt",
+      "price": 45,
+      "size": "L",
+      "color": "orange",
+      "category": "women"
+    },
+    {
+      "id": 4,
+      "name": "Yellow T-shirt",
+      "price": 50,
+      "size": "XXL",
+      "color": "green",
+      "category": "men"
+    },
+    {
+      "id": 5,
+      "name": "Royal T-shirt",
+      "price": 60,
+      "size": "M",
+      "color": "blue",
+      "category": "women"
+    },
+    {
+      "id": 6,
+      "name": "Big T-shirt",
+      "price": 60,
+      "size": "S",
+      "color": "blue",
+      "category": "children"
+    }
+  ]
+}

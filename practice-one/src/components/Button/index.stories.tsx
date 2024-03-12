@@ -37,5 +37,14 @@ export const Large: Story = {
   args: {
     size: 'large',
     children: 'Checkout',
+    checked: true,
+  },
+}
+
+export const Small: Story = {
+  args: {
+    size: 'small',
+    children: 'Checkout',
+    checked: true,
   },
 }

@@ -3,26 +3,39 @@ import { ReactNode } from 'react'
 type ButtonProps = {
   variant?: 'primary' | 'secondary' | 'tinary'
   children?: ReactNode
-  size?: 'medium' | 'large'
+  size?: 'small' | 'medium' | 'large'
+  checked?: boolean
+  onClick?: () => void
 }
 
 const Button = ({
   children,
   variant = 'primary',
   size = 'medium',
+  onClick,
+  checked,
 }: ButtonProps) => {
   let mode = ''
   if (variant === 'primary') {
     mode = 'bg-purple-500 text-white'
   } else if (variant === 'secondary') {
-    mode = 'bg-red-600 text-white'
+    mode = ' text-black border-2'
   } else mode = 'bg-white text-fuchsia-700'
 
-  const result = size === 'medium' ? 'w-44' : 'w-96'
+  let result = ''
+  if (size === 'large') {
+    result = 'w-96'
+  } else if (size === 'medium') {
+    result = 'w-44'
+  } else result = 'w-24'
+
+  let focus = ''
+  checked ? (focus = 'text-white bg-blue-500') : (focus = 'bg-white')
 
   return (
     <button
-      className={`cursor:pointer bg h-12 border-solid font-bold capitalize ${mode} ${result}`}
+      onClick={onClick}
+      className={`cursor:pointer bg h-12 border-solid font-bold capitalize ${mode} ${result} ${focus}`}
     >
       {children}
     </button>

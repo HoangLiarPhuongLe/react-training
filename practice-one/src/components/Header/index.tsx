@@ -1,12 +1,12 @@
+import { HEADER_NAVLIST } from '../../constants/navigation'
 import logo from '../../assets/images/logo.png'
 import searchicon from '../../assets/images/searchicon.svg'
-import ButtonIcon from '../ButtonIcon'
-import Navbar from '../Navbar'
 import cart from '../../assets/images/cart.svg'
 import account from '../../assets/images/account.svg'
 import heart from '../../assets/images/heart.svg'
-import { HEADER_NAVLIST } from '../../constants/navigation'
 import { Link } from 'react-router-dom'
+import ButtonIcon from '../ButtonIcon'
+import Navbar from '../Navbar'
 
 const Header = () => (
   <header className="flex items-center justify-between px-28 py-8">

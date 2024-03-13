@@ -2,10 +2,17 @@ export type ButtonIconProps = {
   variant?: 'primary' | 'secondary'
   source: string
   alt: string
+  onClick?: () => void
 }
 
-const ButtonIcon = ({ source, alt, variant = 'primary' }: ButtonIconProps) => (
+const ButtonIcon = ({
+  source,
+  alt,
+  variant = 'primary',
+  onClick,
+}: ButtonIconProps) => (
   <button
+    onClick={onClick}
     className={`cursor-pointer p-1 ${variant === 'secondary' ? 'h-12 bg-purple-500' : ''}`}
   >
     <img src={source} alt={alt} />

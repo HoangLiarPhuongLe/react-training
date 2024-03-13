@@ -18,8 +18,8 @@ const ProductsPage = () => {
   useEffect(() => {
     const fetchData = async () => {
       let options = []
-      if (size) options.push('size=' + size)
-      if (color) options.push('color=' + color)
+      if (size) options.push('size_like=' + size)
+      if (color) options.push('color_like=' + color)
       if (category) options.push('category=' + category)
       if (price) options.push('price_gte=' + price)
 

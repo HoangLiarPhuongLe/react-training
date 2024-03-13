@@ -2,9 +2,9 @@ export type TProduct = {
   id: number
   name: string
   price: number
-  color: TColor
+  color: string[]
   category: TCategory
-  size: TSize
+  size: string[]
 }
 
 export type TColor = 'red' | 'blue' | 'orange' | 'green'

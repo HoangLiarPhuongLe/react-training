@@ -24,7 +24,7 @@ const Button = ({
 
   let result = ''
   if (size === 'large') {
-    result = 'w-full'
+    result = 'w-96'
   } else if (size === 'medium') {
     result = 'w-44'
   } else result = 'w-24'

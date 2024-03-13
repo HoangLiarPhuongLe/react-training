@@ -1,14 +1,30 @@
+import { Dispatch, SetStateAction } from 'react'
 import SizeItem from './SizeItem'
 
-const SizeChoose = () => (
-  <div>
-    <p className="my-3 text-lg font-bold capitalize">size</p>
-    <div className="flex gap-2">
-      <SizeItem />
-      <SizeItem />
-      <SizeItem />
+const SizeChoose = ({
+  list,
+  size,
+  setSize,
+}: {
+  list?: string[]
+  size?: string
+  setSize: Dispatch<SetStateAction<string | undefined>>
+}) => {
+  const listSize = list?.map((item) => (
+    <SizeItem
+      key={item}
+      item={item}
+      onClick={() => {
+        setSize(item)
+      }}
+    />
+  ))
+  return (
+    <div>
+      <p className="my-3 text-lg font-bold capitalize">size</p>
+      <div className="flex gap-2">{listSize}</div>
     </div>
-  </div>
-)
+  )
+}
 
 export default SizeChoose

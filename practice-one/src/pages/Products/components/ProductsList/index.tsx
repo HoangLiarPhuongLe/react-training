@@ -9,7 +9,7 @@ const ListProducts = ({ products }: { products: TProduct[] }) => {
       <div className="grid grid-cols-1 justify-between gap-x-8 gap-y-7  lg:grid-cols-3 ">
         {products.map((product: TProduct) => {
           return (
-            <Link to="/details">
+            <Link to={`/details/${product.id}`}>
               <Product
                 name={product.name}
                 color={product.color}

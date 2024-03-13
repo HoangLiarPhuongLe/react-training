@@ -3,11 +3,9 @@ import SizeItem from './SizeItem'
 
 const SizeChoose = ({
   list,
-  size,
   setSize,
 }: {
   list?: string[]
-  size?: string
   setSize: Dispatch<SetStateAction<string | undefined>>
 }) => {
   const listSize = list?.map((item) => (

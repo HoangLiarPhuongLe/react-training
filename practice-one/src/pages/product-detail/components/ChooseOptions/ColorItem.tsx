@@ -1,4 +1,10 @@
-const ColorItem = ({ item, onClick }: { item: string, onClick: () => void }) => {
+const ColorItem = ({
+  item,
+  onClick,
+}: {
+  item: string
+  onClick: () => void
+}) => {
   let backgroundColor = ''
   if (item === 'orange') {
     backgroundColor = 'bg-orange-500'
@@ -9,7 +15,8 @@ const ColorItem = ({ item, onClick }: { item: string, onClick: () => void }) => 
   } else backgroundColor = 'bg-red-500'
 
   return (
-    <button onClick={onClick}
+    <button
+      onClick={onClick}
       className={`size-5 rounded-2xl border-2 ${backgroundColor}`}
     ></button>
   )

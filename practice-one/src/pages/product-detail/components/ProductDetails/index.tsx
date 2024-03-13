@@ -32,6 +32,7 @@ const ProductDetails = ({ product }: { product: TProduct | undefined }) => {
   }, [count, product])
 
   console.log('color', color)
+  console.log('size', size)
 
   return (
     <div className="mb-8 flex gap-28">
@@ -52,14 +53,10 @@ const ProductDetails = ({ product }: { product: TProduct | undefined }) => {
         </p>
         <StarFive list={LIST_STARS} />
         <div className="mt-6 flex justify-between">
-          <ColorChoose
-            list={product?.color}
-            color={color}
-            setColor={setColor}
-          />
+          <ColorChoose list={product?.color} setColor={setColor} />
           <Stock />
         </div>
-        <SizeChoose list={product?.size} size={size} setSize={setSize} />
+        <SizeChoose list={product?.size} setSize={setSize} />
         <div className="mb-8 mt-5 flex justify-between">
           <Quantity count={count} setCount={setCount} />
           <p className="self-center text-2xl font-bold uppercase">

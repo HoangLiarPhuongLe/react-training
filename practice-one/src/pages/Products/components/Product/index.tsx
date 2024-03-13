@@ -3,7 +3,7 @@ import productImage from '../../../../assets/images/product.png'
 import startfive from '../../../../assets/images/star5.svg'
 import ButtonIcon from '../../../../components/ButtonIcon'
 
-const Product = ({ id, name, price, color, category, size }: TProduct) => {
+const Product = ({ name, price }: TProduct) => {
   return (
     <div className="cursor-pointer shadow-md">
       <div>

@@ -1,6 +1,6 @@
-import logo from '../../assets/images/logo.png'
 import Button from '../Button'
 import NavbarFooter from '../NavbarFooter'
+import logo from '../../assets/images/logo.png'
 
 const Footer = () => (
   <footer className="flex justify-between bg-slate-600 px-28 py-16">

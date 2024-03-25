@@ -1,6 +1,5 @@
-import { TProduct } from '../../../../types'
 import { Link } from 'react-router-dom'
-import Button from '../../../../components/Button'
+import { TProduct } from '../../../../types'
 import Product from '../Product'
 
 const ListProducts = ({ products }: { products: TProduct[] }) => {
@@ -18,15 +17,11 @@ const ListProducts = ({ products }: { products: TProduct[] }) => {
                 key={product.id}
                 category={product.category}
                 size={product.size}
+                stock={product.stock}
               />
             </Link>
           )
         })}
-      </div>
-      <div className="pl-80">
-        <Button variant="primary" size="medium" checked>
-          load more
-        </Button>
       </div>
     </div>
   )

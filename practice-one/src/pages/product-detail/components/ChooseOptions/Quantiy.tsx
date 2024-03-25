@@ -1,6 +1,6 @@
+import ButtonIcon from '../../../../components/ButtonIcon'
 import plus from '../../../../assets/images/plus.svg'
 import remove from '../../../../assets/images/remove.svg'
-import ButtonIcon from '../../../../components/ButtonIcon'
 
 const Quantity = ({
   count,

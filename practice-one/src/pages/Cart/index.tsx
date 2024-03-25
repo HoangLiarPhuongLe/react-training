@@ -1,10 +1,11 @@
 import { Link } from 'react-router-dom'
-import Checkout from './components/Checkout'
-import { TCartItem } from '../../types'
-import { useState, useEffect, SetStateAction } from 'react'
 import { API_BASE_URL } from '../../constants/urls'
-import CartListItem from './components/CartProduct'
+import { TCartItem } from '../../types'
 import { Dispatch } from 'react'
+import { useState, useEffect, SetStateAction } from 'react'
+import Checkout from './components/Checkout'
+import CartListItem from './components/CartProduct'
+
 
 const CartPage = ({
   setCartLength,
@@ -46,10 +47,17 @@ const CartPage = ({
 
   useEffect(() => {
     const getListCartItem = async () => {
+    try {
       const response = await fetch(`${API_BASE_URL}cart`)
+      if (!response.ok) {
+        throw new Error(`API request failed with status ${response.status}`);
+      }
       const productselected = (await response.json()) as TCartItem[]
       setCartItems(productselected)
+    } catch(error){
+        console.error('Error fetching carts:', error);
     }
+  }
     getListCartItem()
     setReload(false)
   }, [reload])

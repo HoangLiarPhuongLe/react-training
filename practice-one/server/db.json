@@ -103,12 +103,31 @@
   ],
   "cart": [
     {
-      "id": 1,
-      "name": "Small T-shirt",
-      "price": 40,
+      "productId": 2,
+      "name": "Blue T-shirt",
+      "price": 45,
       "color": "blue",
       "quantity": 2,
-      "stock": 3
+      "stock": 3,
+      "id": 1
+    },
+    {
+      "productId": 4,
+      "name": "Yellow T-shirt",
+      "price": 50,
+      "color": "green",
+      "quantity": 3,
+      "stock": 3,
+      "id": 2
+    },
+    {
+      "productId": 3,
+      "name": "Medium T-shirt",
+      "price": 45,
+      "color": "red",
+      "quantity": 1,
+      "stock": 3,
+      "id": 3
     }
   ]
 }

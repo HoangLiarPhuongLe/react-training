@@ -1,13 +1,14 @@
+import { Link } from 'react-router-dom'
+import { Dispatch, SetStateAction } from 'react'
 import { HEADER_NAVLIST } from '../../constants/navigation'
+import ButtonIcon from '../ButtonIcon'
+import Navbar from '../Navbar'
 import logo from '../../assets/images/logo.png'
 import searchicon from '../../assets/images/searchicon.svg'
 import cart from '../../assets/images/cart.svg'
 import account from '../../assets/images/account.svg'
 import heart from '../../assets/images/heart.svg'
-import { Link } from 'react-router-dom'
-import ButtonIcon from '../ButtonIcon'
-import Navbar from '../Navbar'
-import { Dispatch, SetStateAction } from 'react'
+
 
 const Header = ({
   cartlength,
@@ -34,9 +35,9 @@ const Header = ({
         <ButtonIcon source={heart} alt="heart" />
         <ButtonIcon source={account} alt="account" />
       </div>
-      <form className="relative flex flex-nowrap">
+      <form className="relative flex flex-nowrap appearance-none">
         <input
-          className="rounded-md border px-3 py-1 text-lg outline-none"
+          className="rounded-md border px-3 py-1 text-lg outline-none appearance-none"
           type="search"
           placeholder="Search"
           maxLength={20}
@@ -44,11 +45,9 @@ const Header = ({
             setSearchValue(e.target.value)
           }}
         />
-        <img
-          className="absolute bottom-1/3 right-4 cursor-pointer"
-          src={searchicon}
-          alt="search icon"
-        />
+        <div className="absolute top-2 right-4 ">
+          <ButtonIcon onClick={()=>{}} source={searchicon} alt='search icon'/>
+        </div>
       </form>
     </div>
   </header>

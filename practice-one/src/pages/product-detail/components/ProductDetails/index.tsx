@@ -1,26 +1,28 @@
+import { Link } from 'react-router-dom'
+import { API_BASE_URL } from '../../../../constants/urls'
 import { LIST_STARS } from '../../../../constants/icon'
-import productImgBigSize from '../../../../assets/images/productbigsize.png'
-import productImgSmallSizeOne from '../../../../assets/images/productsmallsizeone.png'
-import productImgSmallSizeTwo from '../../../../assets/images/productsmallsizetwo.png'
-import productImgSmallSizeThree from '../../../../assets/images/productsmallsizethree.png'
-import bag from '../../../../assets/images/bag.svg'
-import Button from '../../../../components/Button'
 import { TProduct, TCartItem } from '../../../../types'
 import { Dispatch, SetStateAction, useEffect, useState } from 'react'
+import Button from '../../../../components/Button'
 import ButtonIcon from '../../../../components/ButtonIcon'
 import ColorChoose from '../ChooseOptions/ColorsChoose'
 import Quantity from '../ChooseOptions/Quantiy'
 import SizeChoose from '../ChooseOptions/SizeChoose'
 import Stock from '../Stock'
 import StarFive from '../../../../components/Evalute/StarFive'
-import { Link } from 'react-router-dom'
-import { API_BASE_URL } from '../../../../constants/urls'
+import productImgBigSize from '../../../../assets/images/productbigsize.png'
+import productImgSmallSizeOne from '../../../../assets/images/productsmallsizeone.png'
+import productImgSmallSizeTwo from '../../../../assets/images/productsmallsizetwo.png'
+import productImgSmallSizeThree from '../../../../assets/images/productsmallsizethree.png'
+import bag from '../../../../assets/images/bag.svg'
+
+
 
 const ProductDetails = ({
   product,
   setReload,
 }: {
-  product: TProduct | undefined
+  product: TProduct 
   setReload: Dispatch<SetStateAction<boolean>>
 }) => {
   const [count, setCount] = useState(1)
@@ -83,8 +85,8 @@ const ProductDetails = ({
      setIsDisabledAAdd(false)}
   }, [count, stock])
 
-  const productSelected: TCartItem = {
-    id: product?.id,
+  const productSelected: Omit<TCartItem,'id'> = {
+    productId: product.id,
     name: product?.name,
     price: product?.price,
     color: color,

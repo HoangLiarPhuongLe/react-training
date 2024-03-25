@@ -1,7 +1,8 @@
+import { API_BASE_URL } from '../../../../constants/urls'
 import { Dispatch, SetStateAction } from 'react'
 import { TCartItem } from '../../../../types'
 import CartItem from './CartProductItem'
-import { API_BASE_URL } from '../../../../constants/urls'
+
 
 const CartListItem = ({
   list,
@@ -37,23 +38,7 @@ const CartListItem = ({
   }
 
   const newList = list
-  // const listCartItems = list.map((cartitem, index) => (
-  //   <CartItem
-  //     cartitem={cartitem}
-  //     key={cartitem.id}
-  //     setReload={setReload}
-  //     onIncre={() => {
-  //       const newList = list
-  //       newList[index].quantity++
-
-  //       console.log('new list:', newList)
-  //       console.log('old list',)
-
-  //       setCartItems(newList)
-  //     }}
-  //   />
-  // ))
-
+  
   return (
     <div className="flex flex-col gap-5">
       {list.map((cartitem, index) => (

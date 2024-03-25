@@ -1,10 +1,10 @@
-import trashcan from '../../../../assets/images/trashcan.svg'
-import cartImg from '../../../../assets/images/cartImg.png'
+import { API_BASE_URL } from '../../../../constants/urls'
+import { Dispatch, SetStateAction, useState, useEffect } from 'react'
 import { TCartItem } from '../../../../types'
 import ButtonIcon from '../../../../components/ButtonIcon'
 import Quantity from '../../../product-detail/components/ChooseOptions/Quantiy'
-import React, { Dispatch, SetStateAction, useState, useEffect } from 'react'
-import { API_BASE_URL } from '../../../../constants/urls'
+import trashcan from '../../../../assets/images/trashcan.svg'
+import cartImg from '../../../../assets/images/cartImg.png'
 
 const CartItem = ({
   cartitem,
@@ -12,7 +12,7 @@ const CartItem = ({
   onIncre,
   onDecre,
 }: {
-  cartitem: TCartItem
+  cartitem: TCartItem 
   setReload: Dispatch<SetStateAction<boolean>>
   onIncre: () => void
   onDecre: () => void
@@ -45,15 +45,15 @@ const CartItem = ({
 
   return (
     <div className="w-full border-solid bg-slate-300 px-6 py-5">
-      <ul className="flex items-center gap-24  text-center">
+      <ul className="flex items-center gap-20  text-center">
         <li>
           <img src={cartImg} alt="cart image" />
         </li>
-        <li>
+        <li className='w-36'>
           <span className="text-lg font-bold capitalize">{cartitem.name}</span>
           <p className="text-gray-400">Color: {cartitem.color} </p>
         </li>
-        <li>
+        <li className='w-24'>
           <span className="text-lg font-bold uppercase">
             $ {cartitem.price * cartitem.quantity} usd
           </span>

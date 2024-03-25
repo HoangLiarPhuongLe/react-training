@@ -1,6 +1,5 @@
-import { Dispatch, SetStateAction } from 'react'
-
 import { TSize } from '../../../../types'
+import { Dispatch, SetStateAction } from 'react'
 import SizeItem from './SizeItem'
 
 const Size = ({

@@ -14,7 +14,11 @@ export type TCategory = 'men' | 'women' | 'children'
 
 export type TSize = 'S' | 'M' | 'L' | 'XL' | 'XXL'
 
-export type TCartItem = {
+export type TCartItem =TProductSelected & {
+  productId: number
+ }
+
+export type TProductSelected = {
   id?: number
   name?: string
   price?: number
@@ -22,3 +26,5 @@ export type TCartItem = {
   quantity: number
   stock?: number
 }
+
+

@@ -1,5 +1,5 @@
-import shoppingcart from '../../../../assets/images/shoppingcart.svg'
 import ButtonIcon from '../../../../components/ButtonIcon'
+import shoppingcart from '../../../../assets/images/shoppingcart.svg'
 
 const Stock = ({ stock }: { stock: number | undefined }) => (
   <div>

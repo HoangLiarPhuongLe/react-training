@@ -1,5 +1,5 @@
-import { Dispatch, SetStateAction } from 'react'
 import { TColor } from '../../../../types'
+import { Dispatch, SetStateAction } from 'react'
 import ColorItem from './ColorItem'
 
 const Color = ({

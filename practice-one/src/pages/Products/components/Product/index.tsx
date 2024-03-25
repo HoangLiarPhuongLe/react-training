@@ -1,7 +1,8 @@
 import { TProduct } from '../../../../types'
+import ButtonIcon from '../../../../components/ButtonIcon'
 import productImage from '../../../../assets/images/product.png'
 import startfive from '../../../../assets/images/star5.svg'
-import ButtonIcon from '../../../../components/ButtonIcon'
+
 
 const Product = ({ name, price }: TProduct) => {
   return (

@@ -17,7 +17,8 @@ const Categories = ({
           checked={value === 'men'}
           variant="secondary"
           onClick={() => {
-            setValue('men')
+            if (value === 'men') setValue(undefined)
+            else setValue('men')
           }}
         >
           Men
@@ -27,7 +28,8 @@ const Categories = ({
           checked={value === 'women'}
           variant="secondary"
           onClick={() => {
-            setValue('women')
+            if (value === 'women') setValue(undefined)
+            else setValue('women')
           }}
         >
           Woman
@@ -37,7 +39,8 @@ const Categories = ({
           checked={value === 'children'}
           variant="secondary"
           onClick={() => {
-            setValue('children')
+            if (value === 'children') setValue(undefined)
+            else setValue('children')
           }}
         >
           Children

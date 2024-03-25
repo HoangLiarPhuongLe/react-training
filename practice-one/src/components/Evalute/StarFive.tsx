@@ -14,7 +14,7 @@ const StarFive = ({ list }: StarFiveProps) => {
   return (
     <div className="mt-5">
       {stars}
-      <span className=" text-slate-400">(1k)</span>
+      <span className=" text-slate-400">(2k)</span>
     </div>
   )
 }

@@ -4,49 +4,130 @@
       "id": 1,
       "name": "Small T-shirt",
       "price": 40,
-      "size": "L",
-      "color": "red",
-      "category": "men"
+      "size": [
+        "S",
+        "M",
+        "L"
+      ],
+      "color": [
+        "red",
+        "blue",
+        "orange"
+      ],
+      "category": "men",
+      "stock": 3
     },
     {
       "id": 2,
       "name": "Blue T-shirt",
       "price": 45,
-      "size": "XL",
-      "color": "blue",
-      "category": "children"
+      "size": [
+        "M",
+        "L",
+        "XL"
+      ],
+      "color": [
+        "blue",
+        "green",
+        "orange"
+      ],
+      "category": "children",
+      "stock": 3
     },
     {
       "id": 3,
       "name": "Medium T-shirt",
       "price": 45,
-      "size": "L",
-      "color": "orange",
-      "category": "women"
+      "size": [
+        "S",
+        "L",
+        "XL"
+      ],
+      "color": [
+        "orange",
+        "red"
+      ],
+      "category": "women",
+      "stock": 3
     },
     {
       "id": 4,
       "name": "Yellow T-shirt",
       "price": 50,
-      "size": "XXL",
-      "color": "green",
-      "category": "men"
+      "size": [
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "color": [
+        "green",
+        "red",
+        "blue"
+      ],
+      "category": "men",
+      "stock": 3
     },
     {
       "id": 5,
       "name": "Royal T-shirt",
       "price": 60,
-      "size": "M",
-      "color": "blue",
-      "category": "women"
+      "size": [
+        "S",
+        "M",
+        "XXL"
+      ],
+      "color": [
+        "blue",
+        "red"
+      ],
+      "category": "women",
+      "stock": 3
     },
     {
       "id": 6,
       "name": "Big T-shirt",
       "price": 60,
-      "size": "S",
+      "size": [
+        "S",
+        "L",
+        "XL"
+      ],
+      "color": [
+        "orange",
+        "green",
+        "red"
+      ],
+      "category": "children",
+      "stock": 3
+    }
+  ],
+  "cart": [
+    {
+      "productId": 2,
+      "name": "Blue T-shirt",
+      "price": 45,
       "color": "blue",
-      "category": "children"
+      "quantity": 2,
+      "stock": 3,
+      "id": 1
+    },
+    {
+      "productId": 4,
+      "name": "Yellow T-shirt",
+      "price": 50,
+      "color": "green",
+      "quantity": 3,
+      "stock": 3,
+      "id": 2
+    },
+    {
+      "productId": 3,
+      "name": "Medium T-shirt",
+      "price": 45,
+      "color": "red",
+      "quantity": 1,
+      "stock": 3,
+      "id": 3
     }
   ]
 }

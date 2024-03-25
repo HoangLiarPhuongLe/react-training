@@ -1,14 +1,15 @@
-import { useState, useEffect } from 'react'
 import { TCategory, TColor, TProduct, TSize } from '../../types'
 import { API_BASE_URL } from '../../constants/urls'
+import { useState, useEffect } from 'react'
 import Slides from './components/Slides'
 import Categories from './components/FilterOptions/Categories'
 import Color from './components/FilterOptions/ColorOptions'
 import ProgressBar from './components/ProgressBar'
 import Size from './components/FilterOptions/SizeOptions'
 import ListProducts from './components/ProductsList'
+import NotFound from '../../components/NotFound'
 
-const ProductsPage = () => {
+const ProductsPage = ({ searchvalue }: { searchvalue: string }) => {
   const [category, setCategory] = useState<TCategory | undefined>(undefined)
   const [color, setColor] = useState<TColor | undefined>(undefined)
   const [size, setSize] = useState<TSize | undefined>(undefined)
@@ -17,21 +18,48 @@ const ProductsPage = () => {
 
   useEffect(() => {
     const fetchData = async () => {
+      try{
+      const response = await fetch(
+        `${API_BASE_URL}products?name_like=${searchvalue}`,
+      )
+      if (!response.ok) {
+        throw new Error(`API request failed with status ${response.status}`);
+      }
+      const products = (await response.json()) as TProduct[]
+      setProducts(products) 
+    } catch (error){
+        console.error('Error fetching products:', error);
+      }
+    }
+
+    fetchData()
+  }, [searchvalue])
+
+  useEffect(() => {
+    const fetchData = async () => {
       let options = []
-      if (size) options.push('size=' + size)
-      if (color) options.push('color=' + color)
+      if (size) options.push('size_like=' + size)
+      if (color) options.push('color_like=' + color)
       if (category) options.push('category=' + category)
       if (price) options.push('price_gte=' + price)
-
+      try{
       const response = await fetch(
         `${API_BASE_URL}products?${options.join('&')}`,
       )
+      if (!response.ok) {
+        throw new Error(`API request failed with status ${response.status}`);
+      }
       const products = (await response.json()) as TProduct[]
       setProducts(products)
+      } catch(error){
+        console.error('Error fetching products:', error);
+      }
     }
 
     fetchData()
   }, [category, color, size, price])
+
+  const notFoundProducts = products.length === 0
 
   return (
     <main className="flex flex-col">
@@ -44,7 +72,7 @@ const ProductsPage = () => {
         </div>
         <Slides />
       </div>
-      <div className="my-4 flex justify-between px-28">
+      <div className="my-11 flex justify-between px-28">
         <div>
           <p className=" text-2xl capitalize">filter</p>
 
@@ -56,7 +84,9 @@ const ProductsPage = () => {
 
           <Size value={size} setValue={setSize} />
         </div>
-        <ListProducts products={products} />
+        { notFoundProducts ? <NotFound/> : 
+          <ListProducts products={products} />
+          }
       </div>
     </main>
   )

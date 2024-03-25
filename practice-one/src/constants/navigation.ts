@@ -106,11 +106,11 @@ export const FOOTER_NAVLIST = [
 
 export const HEADER_NAVLIST = [
   {
-    to: '#',
+    to: '/',
     content: 'home',
   },
   {
-    to: '#',
+    to: '/',
     content: 'shop',
   },
   {

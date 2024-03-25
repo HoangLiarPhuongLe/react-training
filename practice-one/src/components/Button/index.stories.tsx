@@ -19,6 +19,15 @@ export const Default: Story = {
     children: 'Checkout',
   },
 }
+
+export const Primary: Story = {
+  args: {
+    variant: 'primary',
+    children: 'Checkout',
+   
+  }
+}
+
 export const Secondary: Story = {
   args: {
     variant: 'secondary',
@@ -38,6 +47,7 @@ export const Large: Story = {
     size: 'large',
     children: 'Checkout',
     checked: true,
+   
   },
 }
 
@@ -46,5 +56,7 @@ export const Small: Story = {
     size: 'small',
     children: 'Checkout',
     checked: true,
+   
+    
   },
 }

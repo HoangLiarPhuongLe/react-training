@@ -4,14 +4,17 @@ import SizeItem from './SizeItem'
 const SizeChoose = ({
   list,
   setSize,
+  size,
 }: {
   list?: string[]
+  size?: string
   setSize: Dispatch<SetStateAction<string | undefined>>
 }) => {
   const listSize = list?.map((item) => (
     <SizeItem
       key={item}
       item={item}
+      isActive={size === item}
       onClick={() => {
         setSize(item)
       }}

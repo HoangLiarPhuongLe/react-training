@@ -1,7 +1,15 @@
-const SizeItem = ({ item, onClick }: { item: string; onClick: () => void }) => (
+const SizeItem = ({
+  item,
+  onClick,
+  isActive,
+}: {
+  item: string
+  onClick: () => void
+  isActive: boolean
+}) => (
   <button
     onClick={onClick}
-    className="size-5 rounded-3xl border-2 text-center text-xs font-medium "
+    className={`size-5 rounded-3xl border-2 text-center text-xs font-medium ${isActive ? 'bg-blue-600 font-bold text-white' : ''}`}
   >
     {item}
   </button>

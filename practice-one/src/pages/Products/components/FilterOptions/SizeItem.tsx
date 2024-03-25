@@ -3,11 +3,11 @@ import { TSize } from '../../../../types'
 const SizeItem = ({
   variant,
   isChecked,
-  onChange,
+  onClick,
 }: {
   variant: TSize
   isChecked: boolean
-  onChange: () => void
+  onClick: () => void
 }) => {
   let result = ''
   if (variant === 'S') result = 'S'
@@ -19,7 +19,7 @@ const SizeItem = ({
   return (
     <form className="flex flex-col items-center">
       <label className="uppercase">{result}</label>
-      <input type="radio" onChange={onChange} checked={isChecked} />
+      <input type="radio" onClick={onClick} checked={isChecked} />
     </form>
   )
 }

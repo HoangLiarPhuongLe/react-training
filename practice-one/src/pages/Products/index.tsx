@@ -7,13 +7,26 @@ import Color from './components/FilterOptions/ColorOptions'
 import ProgressBar from './components/ProgressBar'
 import Size from './components/FilterOptions/SizeOptions'
 import ListProducts from './components/ProductsList'
+import NotFound from '../../components/NotFound'
 
-const ProductsPage = () => {
+const ProductsPage = ({ searchvalue }: { searchvalue: string }) => {
   const [category, setCategory] = useState<TCategory | undefined>(undefined)
   const [color, setColor] = useState<TColor | undefined>(undefined)
   const [size, setSize] = useState<TSize | undefined>(undefined)
   const [price, setPrice] = useState<number>(40)
   const [products, setProducts] = useState<TProduct[]>([])
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch(
+        `${API_BASE_URL}products?name_like=${searchvalue}`,
+      )
+      const products = (await response.json()) as TProduct[]
+      setProducts(products)
+    }
+
+    fetchData()
+  }, [searchvalue])
 
   useEffect(() => {
     const fetchData = async () => {
@@ -32,6 +45,8 @@ const ProductsPage = () => {
 
     fetchData()
   }, [category, color, size, price])
+
+  const notFoundProducts = products.length === 0
 
   return (
     <main className="flex flex-col">
@@ -56,7 +71,9 @@ const ProductsPage = () => {
 
           <Size value={size} setValue={setSize} />
         </div>
-        <ListProducts products={products} />
+        { notFoundProducts ? <NotFound/> : 
+          <ListProducts products={products} />
+          }
       </div>
     </main>
   )

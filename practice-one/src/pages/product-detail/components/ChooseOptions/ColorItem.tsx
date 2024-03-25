@@ -1,9 +1,11 @@
 const ColorItem = ({
   item,
   onClick,
+  isActive,
 }: {
   item: string
   onClick: () => void
+  isActive?: boolean
 }) => {
   let backgroundColor = ''
   if (item === 'orange') {
@@ -17,7 +19,7 @@ const ColorItem = ({
   return (
     <button
       onClick={onClick}
-      className={`size-5 rounded-2xl border-2 ${backgroundColor}`}
+      className={`size-5 rounded-2xl border-2 ${backgroundColor} ${isActive ? 'ring-1 ring-purple-700' : ''}`}
     ></button>
   )
 }

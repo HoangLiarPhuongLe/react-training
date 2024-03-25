@@ -3,15 +3,18 @@ import ColorItem from './ColorItem'
 
 const ColorChoose = ({
   list,
+  color,
   setColor,
 }: {
   list?: string[]
+  color?: string
   setColor: Dispatch<SetStateAction<string | undefined>>
 }) => {
   const listColor = list?.map((item) => (
     <ColorItem
       key={item}
       item={item}
+      isActive={color === item}
       onClick={() => {
         setColor(item)
       }}

@@ -16,36 +16,41 @@ const Size = ({
       <div className="flex gap-4 pl-4">
         <SizeItem
           isChecked={value === 'S'}
-          onChange={() => {
-            setValue('S')
+          onClick={() => {
+            if (value === 'S') setValue(undefined)
+            else setValue('S')
           }}
           variant="S"
         />
         <SizeItem
           isChecked={value === 'M'}
-          onChange={() => {
-            setValue('M')
+          onClick={() => {
+            if (value === 'M') setValue(undefined)
+            else setValue('M')
           }}
           variant="M"
         />
         <SizeItem
           isChecked={value === 'L'}
-          onChange={() => {
-            setValue('L')
+          onClick={() => {
+            if (value === 'L') setValue(undefined)
+            else setValue('L')
           }}
           variant="L"
         />
         <SizeItem
           isChecked={value === 'XL'}
-          onChange={() => {
-            setValue('XL')
+          onClick={() => {
+            if (value === 'XL') setValue(undefined)
+            else setValue('XL')
           }}
           variant="XL"
         />
         <SizeItem
           isChecked={value === 'XXL'}
-          onChange={() => {
-            setValue('XXL')
+          onClick={() => {
+            if (value === 'XXL') setValue(undefined)
+            else setValue('XXL')
           }}
           variant="XXL"
         />

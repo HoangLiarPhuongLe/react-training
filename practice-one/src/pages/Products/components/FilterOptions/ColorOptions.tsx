@@ -17,28 +17,32 @@ const Color = ({
           variant="red"
           isActive={value === 'red'}
           onClick={() => {
-            setValue('red')
+            if (value === 'red') setValue(undefined)
+            else setValue('red')
           }}
         />
         <ColorItem
           variant="orange"
           isActive={value === 'orange'}
           onClick={() => {
-            setValue('orange')
+            if (value === 'orange') setValue(undefined)
+            else setValue('orange')
           }}
         />
         <ColorItem
           isActive={value === 'green'}
           variant="green"
           onClick={() => {
-            setValue('green')
+            if (value === 'green') setValue(undefined)
+            else setValue('green')
           }}
         />
         <ColorItem
           isActive={value === 'blue'}
           variant="blue"
           onClick={() => {
-            setValue('blue')
+            if (value === 'blue') setValue(undefined)
+            else setValue('blue')
           }}
         />
       </div>

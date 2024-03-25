@@ -3,6 +3,8 @@ export type ButtonIconProps = {
   source: string
   alt: string
   onClick?: () => void
+  
+  disabled?: boolean
 }
 
 const ButtonIcon = ({
@@ -10,13 +12,18 @@ const ButtonIcon = ({
   alt,
   variant = 'primary',
   onClick,
-}: ButtonIconProps) => (
+  disabled
+}: ButtonIconProps) => {
+
+   return(
   <button
     onClick={onClick}
-    className={`cursor-pointer p-1 ${variant === 'secondary' ? 'h-12 bg-purple-500' : ''}`}
+    disabled= {disabled}
+    className={`cursor-pointer p-1  ${variant === 'secondary' ? 'h-12 bg-purple-500' : ''}`}
   >
     <img src={source} alt={alt} />
   </button>
-)
+  )
+}
 
 export default ButtonIcon

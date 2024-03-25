@@ -5,8 +5,8 @@ import productImgSmallSizeTwo from '../../../../assets/images/productsmallsizetw
 import productImgSmallSizeThree from '../../../../assets/images/productsmallsizethree.png'
 import bag from '../../../../assets/images/bag.svg'
 import Button from '../../../../components/Button'
-import { TProduct } from '../../../../types'
-import { useEffect, useState } from 'react'
+import { TProduct, TCartItem } from '../../../../types'
+import { Dispatch, SetStateAction, useEffect, useState } from 'react'
 import ButtonIcon from '../../../../components/ButtonIcon'
 import ColorChoose from '../ChooseOptions/ColorsChoose'
 import Quantity from '../ChooseOptions/Quantiy'
@@ -14,25 +14,83 @@ import SizeChoose from '../ChooseOptions/SizeChoose'
 import Stock from '../Stock'
 import StarFive from '../../../../components/Evalute/StarFive'
 import { Link } from 'react-router-dom'
+import { API_BASE_URL } from '../../../../constants/urls'
 
-const ProductDetails = ({ product }: { product: TProduct | undefined }) => {
+const ProductDetails = ({
+  product,
+  setReload,
+}: {
+  product: TProduct | undefined
+  setReload: Dispatch<SetStateAction<boolean>>
+}) => {
   const [count, setCount] = useState(1)
   const [newprice, setNewPrice] = useState<number>(product?.price || 0)
   const [size, setSize] = useState<string | undefined>(undefined)
   const [color, setColor] = useState<string | undefined>(undefined)
+  const [stock, setStock] = useState<number>(product?.stock || 0)
+  const [isdisabled, setIsDisabled] = useState(true)
+  const [isDisabledRemove, setIsDisabledRemove] = useState(false)
+  const [isDisabledAdd, setIsDisabledAAdd] = useState(false)
+
+  const addToCart = async (productSelected: TCartItem) => {
+    try {
+      const response = await fetch(`${API_BASE_URL}cart`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(productSelected),
+      })
+
+      const data = await response.json()
+
+      console.log('add success')
+
+      return data
+    } catch (error) {
+      console.error('Error adding product:', error)
+      throw new Error('Failed to add product.')
+    }
+  }
 
   const getNewPrice = (price: number) => {
     setNewPrice(count * price)
   }
 
+  useEffect(()=>{
+    if(color && size) {
+      setIsDisabled(false)
+    }
+  }, [size,color])
+
   useEffect(() => {
     if (product) {
       getNewPrice(product.price)
+      setStock(product.stock)
     }
   }, [count, product])
 
-  console.log('color', color)
-  console.log('size', size)
+  useEffect(()=> {
+    if(count <=1) {
+      setIsDisabledRemove(true)
+      setIsDisabledAAdd(false) 
+    }
+    else if(count >= stock){
+      setIsDisabledRemove(false)
+      setIsDisabledAAdd(true)
+    
+    } else{ setIsDisabledRemove(false)
+     setIsDisabledAAdd(false)}
+  }, [count, stock])
+
+  const productSelected: TCartItem = {
+    id: product?.id,
+    name: product?.name,
+    price: product?.price,
+    color: color,
+    quantity: count,
+    stock: stock,
+  }
 
   return (
     <div className="mb-8 flex gap-28">
@@ -53,27 +111,55 @@ const ProductDetails = ({ product }: { product: TProduct | undefined }) => {
         </p>
         <StarFive list={LIST_STARS} />
         <div className="mt-6 flex justify-between">
-          <ColorChoose list={product?.color} setColor={setColor} />
-          <Stock />
+          <ColorChoose
+            list={product?.color}
+            color={color}
+            setColor={setColor}
+          />
+          <Stock stock={stock} />
         </div>
-        <SizeChoose list={product?.size} setSize={setSize} />
+        <SizeChoose list={product?.size} size={size} setSize={setSize} />
         <div className="mb-8 mt-5 flex justify-between">
-          <Quantity count={count} setCount={setCount} />
+          <Quantity
+            count={count}
+            setCount={() => {
+              setCount(count + 1)
+            }}
+            setDecre={() => {
+              setCount(count - 1)
+            }}
+            checked={true}
+            disabledRemove = {isDisabledRemove}
+            disabledAdd = {isDisabledAdd}
+          />
           <p className="self-center text-2xl font-bold uppercase">
             $ {newprice} usd
           </p>
         </div>
         <div className="flex items-center gap-6">
-          <Link to="/cart">
+          <Link className='w-full' to="/cart">
             <Button
               variant="primary"
               checked={true}
               size="large"
               children="Checkout"
+              disabled={isdisabled}
+              onClick={() => {
+                addToCart(productSelected)
+              }}
             />
           </Link>
-
-          <ButtonIcon variant="secondary" source={bag} alt="bag" />
+          <ButtonIcon
+            variant="secondary"
+            source={bag}
+            disabled={isdisabled}
+            onClick={() => {
+              addToCart(productSelected)
+              alert('Add to Cart Succesfull')
+              setReload(true)
+            }}
+            alt="bag"
+          />
         </div>
       </div>
     </div>

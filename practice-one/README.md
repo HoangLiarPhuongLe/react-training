@@ -1,30 +1,68 @@
-# React + TypeScript + Vite
+## Overview
+- This document provides the requirement for React Practice One.
+## Design On Figma
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- Design: [Figma](https://www.figma.com/file/gk1hjQfiDVrINES2HjNlfW/T-Shirt-Website-(Community)-(Community)?type=design&node-id=0-1&mode=design&t=mIvCKH6oAGtpJGqy-0)
 
-Currently, two official plugins are available:
+## Timeline
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Team Size
 
-## Expanding the ESLint configuration
+- 1 dev
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Editor
 
-- Configure the top-level `parserOptions` property like this:
+- Visual Studio Code
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+## Target
+
+- Apply knowledge of HTML5/CSS3/TypeScript/React
+- Understand and apply Storybook
+
+## Technical Stack
+
+- HTML5/CSS3
+- TypeScript
+- React
+- Storybook
+
+## Getting Started
+
+- Step 01: Clone repository with HTTPS
+```
+  git clone https://github.com/HoangLiarPhuongLe/react-training.git
+```
+- Step 02: Change to branch feature/implement-practice-one
+
+```
+git checkout feature/implement-practice-one
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- Step 03: Install packages
+
+```
+pnpm install
+```
+
+- Step 04: Move to folder which just cloned in your computer
+
+```
+cd practice-one
+```
+
+- Step 05: Run json-server
+
+```
+node server/index.js
+```
+
+- Step 06: Install packages
+
+```
+pnpm install
+```
+- Step 07: Run
+
+```
+pnpm dev
+```

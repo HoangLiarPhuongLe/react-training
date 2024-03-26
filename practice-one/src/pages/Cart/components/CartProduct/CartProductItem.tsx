@@ -12,7 +12,7 @@ const CartItem = ({
   onIncre,
   onDecre,
 }: {
-  cartitem: TCartItem 
+  cartitem: TCartItem | any
   setReload: Dispatch<SetStateAction<boolean>>
   onIncre: () => void
   onDecre: () => void

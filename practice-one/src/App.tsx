@@ -11,7 +11,7 @@ import { TCartItem } from './types'
 function App() {
   const [searchvalue, setSearchValue] = useState('')
   const [cartlength, setCartLength] = useState(0)
-  const [reload, setReload] = useState(false)
+ 
 
   useEffect(() => {
     const getCartLength = async () => {

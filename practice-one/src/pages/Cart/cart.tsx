@@ -21,7 +21,7 @@ const CartPage = ({
   const getTotalPrice = () => {
     let totalPrice = 0
 
-    cartItems.forEach((item) => {
+    cartItems.forEach((item: any) => {
       totalPrice += item.price * item.quantity
     })
     setTotalPrice(totalPrice)
@@ -83,7 +83,6 @@ const CartPage = ({
           <CartListItem
             list={cartItems}
             setReload={setReload}
-            setCartItems={setCartItems}
           />
           <Checkout totalPrice={totalPrice} totalQuantity={totalQuantity} />
         </div>

@@ -128,6 +128,15 @@
       "quantity": 1,
       "stock": 3,
       "id": 3
+    },
+    {
+      "productId": 5,
+      "name": "Royal T-shirt",
+      "price": 60,
+      "color": "blue",
+      "quantity": 1,
+      "stock": 3,
+      "id": 4
     }
   ]
 }

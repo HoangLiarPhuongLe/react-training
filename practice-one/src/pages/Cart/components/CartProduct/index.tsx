@@ -7,12 +7,12 @@ import CartItem from './CartProductItem'
 const CartListItem = ({
   list,
   setReload,
-  setCartItems,
+  
 }: {
   list: TCartItem[]
   setReload: Dispatch<SetStateAction<boolean>>
 
-  setCartItems: Dispatch<SetStateAction<TCartItem[]>>
+  
 }) => {
   const updateQuantityByID = async (item: TCartItem) => {
     try {
